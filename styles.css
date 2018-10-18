@@ -1,0 +1,6 @@
+
+/*Show items by grid*/
+.i-itemsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 15.1em);
+}
