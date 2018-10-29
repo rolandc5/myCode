@@ -10,8 +10,12 @@
 #def odd_or_even(number)
 #return print.even?
 
-def saySomething(str)
-    return str
-end
+#def saySomething(str)
+#    return str
+#end
 
-print saySomething('hello');
+#print saySomething('hello');
+
+#print arr.sum
+
+print ('hello')
