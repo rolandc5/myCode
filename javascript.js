@@ -27,3 +27,14 @@ function countingValleys(n, s) {
     }
     return valleys;
 }
+
+function rotLeft(a, d) {
+    //use the counter
+    //get the array, get he first item in the array use shift then push to the last
+    let cache;
+    for (let i = 0; i < d; i++) {
+        cache = a.shift()
+        a.push(cache);
+    }
+    return a;
+}

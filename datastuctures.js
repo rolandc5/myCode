@@ -21,9 +21,23 @@ function printLinkedList(head) {
     }
 }
 
-const addToTail = (head, data) {
-    
+const addToTail = (head, data) => {
+    let node = new ListNode(data);
+    let array = [];
+    while (head) {
+        array.push(head);
+        head = head.next;
+    }
+    array.push(node);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i+1] !== undefined) {
+            array[i].next = array[i + 1];
+        }
+    }
+    head = array[0];
+    return head;
 }
 
-printLinkedList(a, 'done');
+//printLinkedList(a, 'Iamatend');
+addToTail(a, 'tail');
 
