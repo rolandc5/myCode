@@ -38,6 +38,39 @@ const addToTail = (head, data) => {
     return head;
 }
 
+function mergeLists(head1, head2) {
+    let array = [];
+    const iterate = (list, arr) => {
+        while (list) {
+            arr.push(list.data);
+            list = list.next;
+        }
+        return arr;
+    }
+    let array1 = iterate(head1, []);
+    let array2 = iterate(head2, []);
+    let cache = 0;
+    array = array1.concat(array2);
+    for (let i = 0; i < array.length; i++) {
+        for (let x = i; x < array.length; x++) {
+            if (array[i] > array[x]) {
+                cache = array[i];
+                array[i] = array[x];
+                array[x] = cache;
+            }
+        }
+    }
+    for (let i = 0; i < array.length; i++) {
+        array[i] = new SinglyLinkedListNode(array[i]);
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (array[i + 1]) {
+            array[i].next = array[i + 1];
+        }
+    }
+    return array[0];
+}
+
 //printLinkedList(a, 'Iamatend');
 addToTail(a, 'tail');
 
